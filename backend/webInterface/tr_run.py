@@ -153,9 +153,9 @@ class TrRun(tornado.web.RequestHandler):
                 x1,y1,x2,y2,x3,y3,x4,y4 = rect.reshape(-1)
                 size = max(min(x2-x1,y3-y2) // 2 , 20 )
 
-                myfont = ImageFont.truetype("GB2312.ttf", size=size)
+                #myfont = ImageFont.truetype("GB2312.ttf", size=size)
                 fillcolor = colors[i % len(colors)]
-                img_draw.text((x1, y1 - size ), str(i+1), font=myfont, fill=fillcolor)
+                img_draw.text((x1, y1 - size ), str(i+1),  fill=fillcolor)
                 for xy in [(x1, y1, x2, y2), (x2, y2, x3, y3 ), (x3 , y3 , x4, y4), (x4, y4, x1, y1)]:
                     img_draw.line(xy=xy, fill=colors[i % len(colors)], width=2)
 
